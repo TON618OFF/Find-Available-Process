@@ -35,10 +35,8 @@ namespace FindAvailableProcess
         }
         public static bool IsProcessRunning(string processName, Stub stub)
         {
-            // Используем заглушку, чтобы проверить процесс
             List<string> stubProcesses = stub.ListOfProcesses();
 
-            // Проверяем, есть ли процесс в списке заглушки
             if (stubProcesses.Contains(processName))
             {
                 Console.WriteLine($"Процесс {processName} найден в заглушке.");
