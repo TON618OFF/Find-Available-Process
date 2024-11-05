@@ -7,20 +7,17 @@ namespace FindAvailableProcess.Tests
     [TestClass]
     public class FindProcessTests
     {
-
         [TestMethod]
         public void TestProcessIsRunning()
         {
-            Stub stub = new Stub();
-            bool result = FindProcess.IsProcessRunning("yandex", stub);
+            bool result = FindProcess.IsProcessRunning("yandex");
             Assert.IsTrue(result);
         }
 
         [TestMethod]
         public void TestProcessIsNotRunning()
         {
-            Stub stub = new Stub();
-            bool result = FindProcess.IsProcessRunning("browser", stub);
+            bool result = FindProcess.IsProcessRunning("devenv");
             Assert.IsFalse(result);
         }
     }

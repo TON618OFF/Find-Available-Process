@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FindAvailableProcess
 {
-    public class Stub
+    public class FindProcessStub
     {
         public List<string> ListOfProcesses()
         {
@@ -18,3 +18,5 @@ namespace FindAvailableProcess
         }
     }
 }
+
+

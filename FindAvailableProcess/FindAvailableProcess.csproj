@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FindProcess.cs" />
+    <Compile Include="FindProcessOrigin.cs" />
     <Compile Include="FindProcessStub.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

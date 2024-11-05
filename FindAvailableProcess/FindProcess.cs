@@ -1,15 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Diagnostics;
 
 namespace FindAvailableProcess
 {
     public class FindProcess
     {
-        static void Main()
+        public static void Main()
         {
             Console.Write("Введите название процесса: ");
             string processName = Console.ReadLine().Trim();
@@ -20,8 +16,7 @@ namespace FindAvailableProcess
             }
             else
             {
-                Stub stub = new Stub();
-                bool isRunning = IsProcessRunning(processName, stub);
+                bool isRunning = IsProcessRunning(processName);
 
                 if (isRunning)
                 {
@@ -33,20 +28,21 @@ namespace FindAvailableProcess
                 }
             }
         }
-        public static bool IsProcessRunning(string processName, Stub stub)
+
+        public static bool IsProcessRunning(string processName)
         {
-            List<string> stubProcesses = stub.ListOfProcesses();
+            //FindProcessOrigin processChecker = new FindProcessOrigin();
+            FindProcessStub processChecker = new FindProcessStub();
+            List<string> processes = processChecker.ListOfProcesses();
 
-            if (stubProcesses.Contains(processName))
+            foreach (var process in processes)
             {
-                Console.WriteLine($"Процесс {processName} найден в заглушке.");
-                return true;
+                if (process.Contains(processName))
+                {
+                    return true;
+                }
             }
-
-            Console.WriteLine("Процесс не найден в заглушке.");
             return false;
         }
-
-
     }
 }
